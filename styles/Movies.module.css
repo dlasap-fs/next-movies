@@ -1,0 +1,106 @@
+.movies {
+  min-height: 85vh;
+  max-width: 100%;
+  overflow: auto;
+
+  background: rgba(103, 98, 98, 0.8);
+  gap: 1.5rem 4rem;
+  padding: 20px;
+  font-size: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px 0px 0px 0px;
+  font-size: 24px;
+  font-weight: 700;
+  min-width: 20%;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  background: rgb(232, 10, 47);
+  border-radius: 0px 0px 0px 30px;
+  color: rgb(255, 222, 7);
+  padding: 0px 0px;
+  text-shadow: 1px 1px 5px rgb(5, 2, 2);
+}
+
+.rating p {
+  font-size: 0.75rem;
+}
+
+.movieCard {
+  position: relative;
+  max-width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  background: rgb(71, 78, 52);
+  padding: 0px 0px 10px 0px;
+  border-radius: 0px 0px 30px 30px;
+
+  text-align: center;
+}
+
+.imageHeader {
+  width: 100%;
+  background: rgb(36, 149, 28);
+  display: flex;
+  justify-content: center;
+}
+.movieCardHeader {
+  width: 100%;
+  background: rgb(36, 149, 28);
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 5px rgb(7, 7, 7);
+  /* border-radius: 0px 0px 35px 35px; */
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.movieCardHeader p {
+  font-size: 0.75rem;
+  background: yellow;
+  margin: 5px;
+  padding: 2px 5px;
+  border-radius: 20px;
+  color: black;
+  text-shadow: none;
+}
+
+.movieCardHeader h1 {
+  font-size: 1.4rem;
+  padding: 0px 5px;
+}
+
+.movieCardSubHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+}
+
+.descHeader {
+  background: rgb(215, 140, 9);
+  font-size: 15px;
+}
+
+.description {
+  padding: 5px 15px 10px 15px;
+  font-size: 16px;
+  text-align: justify;
+
+  border-radius: 0px 0px 30px 30px;
+}
