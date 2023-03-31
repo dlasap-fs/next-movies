@@ -3,7 +3,8 @@
   max-width: 100%;
   overflow: auto;
 
-  background: rgba(103, 98, 98, 0.8);
+  background: rgba(103, 98, 98, 0.3);
+
   gap: 1.5rem 4rem;
   padding: 20px;
   font-size: 10px;

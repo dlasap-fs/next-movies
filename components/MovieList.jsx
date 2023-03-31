@@ -7,13 +7,13 @@ export default function MovieList({ movies }) {
       {movies.results.map((movie) => {
         const { id, vote_average, original_language, title, release_date, overview, poster_path, backdrop_path } = movie;
         return (
-          <div className={styles.movieCard}>
+          <div key={id} className={styles.movieCard}>
             <div className={styles.rating}>
               <p>RATING</p>
               {vote_average}
             </div>
             <div className={styles.imageHeader}>
-              <Image src={`https://image.tmdb.org/t/p/original${poster_path}`} width={375} height={375} />
+              <Image key={id} src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={title} width={375} height={375} />
             </div>
             <div className={styles.movieCardHeader}>
               <h1>{title}</h1>
