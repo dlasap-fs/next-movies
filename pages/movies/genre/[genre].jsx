@@ -1,7 +1,7 @@
 import MovieList from "@/components/MovieList";
 import { useRouter } from "next/router";
 
-export default function ({ movies }) {
+export default function Genre({ movies }) {
   const router = useRouter();
   const { genre } = router.query;
 

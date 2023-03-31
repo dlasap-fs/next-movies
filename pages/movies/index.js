@@ -2,7 +2,7 @@ import MovieList from "@/components/MovieList";
 import helpers from "@/utils/helpers";
 import styles from "../../styles/Movies.module.css";
 
-export default function ({ movies }) {
+export default function Movies({ movies }) {
   return (
     <>
       <MovieList movies={movies} />
