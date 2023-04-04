@@ -6,7 +6,7 @@
 }
 
 .navbar {
-  background-color: rgba(74, 166, 77, 0.9);
+  background-color: rgba(4, 79, 6, 0.9);
   color: white;
   display: flex;
   justify-content: center;
@@ -16,10 +16,27 @@
   min-height: 60px;
 }
 
+@keyframes fading {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .content {
+  justify-self: center;
   min-height: 85dvh;
-  width: 100vw;
+  width: 80vw;
   display: flex;
+  justify-content: center;
+  background: rgba(182, 240, 159, 0.25);
+  margin: 20px 0px;
+  animation: fading 1s both;
 }
 
 .links {
@@ -29,7 +46,7 @@
 }
 
 .footer {
-  background-color: rgba(74, 166, 77, 0.9);
+  background-color: rgba(4, 79, 6, 0.9);
   color: white;
   display: flex;
   justify-content: space-between;

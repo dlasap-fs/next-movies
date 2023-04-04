@@ -2,10 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import Link from "next/link";
+import MovieList from "@/components/MovieList";
+import helpers from "@/utils/helpers";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ movies }) {
   return (
     <>
       <Head>
@@ -16,16 +19,53 @@ export default function Home() {
       </Head>
       <main className={styles.home}>
         <div className={styles.mainInfo}>
-          <h1>Movies Next!</h1>
-          <p>Browse any movies before actually watching them!</p>
+          {/* <Image
+            key={"top-pic"}
+            src={`https://img.buzzfeed.com/buzzfeed-static/static/2021-08/31/21/enhanced/7246d7acbcb0/anigif_enhanced-911-1630446633-28.gif`}
+            alt={"Picture"}
+            width={200}
+            height={200}
+          /> */}
+          <div className={styles.header_content}>
+            <h1>Movies Next!</h1>
+            <div className={styles.mainDesc}>
+              <p>Search any movies</p>
+              <p>Get to know it! </p>
+              <p>before actually watching them!</p>
+              <button id={styles.browse_btn}>
+                <Link href="/movies"> Browse Movies</Link>{" "}
+              </button>
+            </div>
+          </div>
         </div>
 
         <div className={styles.moviesSection}>
-          <div className={styles.recent}>Recent Movies</div>
-          <div className={styles.popular}>Popular movies</div>
-          <div className={styles.random}>Random Movies</div>
+          <div className={styles.recent}>
+            <div className={styles.column_movies}>
+              <h3>Recent Movies</h3>
+              <MovieList movies={movies.slice(0, 5)} minimal={true} />
+            </div>
+          </div>
+          <div className={styles.popular}>
+            <div className={styles.column_movies}>
+              <h3>Popular movies</h3>
+              <MovieList movies={movies.slice(5, 10)} minimal={true} />
+            </div>
+          </div>
+          <div className={styles.random}>
+            <div className={styles.column_movies}>
+              <h3>Random movies</h3>
+              <MovieList movies={movies.slice(10, 15)} minimal={true} />
+            </div>
+          </div>
         </div>
       </main>
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`;
+  const movies = await helpers.read(url);
+  return { props: { movies: movies.results }, revalidate: 1 };
+};
