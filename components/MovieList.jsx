@@ -8,7 +8,7 @@ export default function MovieList({ movies, minimal }) {
       {movies.map((movie) => {
         const { id, vote_average, original_language, title, release_date, overview, poster_path, backdrop_path } = movie;
         return (
-          <Link href={`/movies/${id}`}>
+          <Link key={id} href={`/movies/${id}`}>
             {" "}
             <div key={id} className={styles.movieCard}>
               <div className={styles.rating}>

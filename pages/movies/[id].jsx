@@ -13,8 +13,8 @@ export default function Movie({ movie }) {
       {movie.homepage}
       MOVIE {id}
       {JSON.stringify(movie)}
-      <MovieCard movies={[movie]} />
-      <Image src={"https://image.tmdb.org/t/p/original" + movie.poster_path} height={200} width={200} alt={movie.title} />
+      {/* <MovieCard movies={[movie]} /> */}
+      <Image key={id} src={"https://image.tmdb.org/t/p/original" + movie.poster_path} height={200} width={200} alt={movie.title} />
     </>
   );
 }
