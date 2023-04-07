@@ -5,6 +5,7 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import MovieList from "@/components/MovieList";
 import helpers from "@/utils/helpers";
+import SearchMovieBar from "@/components/SearchMovieBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,8 +34,9 @@ export default function Home({ movies }) {
               <p>Get to know it! </p>
               <p>before actually watching them!</p>
               <button id={styles.browse_btn}>
-                <Link href="/movies"> Browse Movies</Link>{" "}
+                <Link href="/movies">Movies</Link>
               </button>
+              <SearchMovieBar />
             </div>
           </div>
         </div>
@@ -42,19 +44,25 @@ export default function Home({ movies }) {
         <div className={styles.moviesSection}>
           <div className={styles.recent}>
             <div className={styles.column_movies}>
-              <h3>Recent Movies</h3>
+              <h3>
+                <Link href={"/movies/search/recent"}>Recent Movies</Link>
+              </h3>
               <MovieList movies={movies.slice(0, 5)} minimal={true} />
             </div>
           </div>
           <div className={styles.popular}>
             <div className={styles.column_movies}>
-              <h3>Popular movies</h3>
+              <h3>
+                <Link href={"/movies/search/popular"}>Popular movies</Link>
+              </h3>
               <MovieList movies={movies.slice(5, 10)} minimal={true} />
             </div>
           </div>
           <div className={styles.random}>
             <div className={styles.column_movies}>
-              <h3>Random movies</h3>
+              <h3>
+                <Link href={"/movies/search/random"}>Random movies</Link>
+              </h3>
               <MovieList movies={movies.slice(10, 15)} minimal={true} />
             </div>
           </div>

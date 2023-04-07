@@ -44,12 +44,13 @@
   background: rgb(228, 223, 133);
   padding: 0px 0px 10px 0px;
   border-radius: 0px 0px 15px 15px;
+  border: 1px solid rgb(245, 212, 26);
 
   text-align: center;
 }
 
 .movieCard:hover {
-  background: yellow;
+  background: rgb(253, 253, 253);
 }
 .imageHeader {
   width: 100%;
@@ -91,6 +92,7 @@
   font-size: 1.1rem;
   font-weight: 700;
   padding: 10px 5px 5px 5px;
+  color: rgb(156, 224, 54);
 }
 
 .movieCardSubHeader {

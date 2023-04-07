@@ -20,8 +20,8 @@ export default function MovieList({ movies, minimal }) {
                   key={id}
                   src={`https://image.tmdb.org/t/p/original${poster_path}`}
                   alt={title}
-                  width={!minimal ? 330 : 200}
-                  height={!minimal ? 330 : 200}
+                  width={!minimal ? 300 : 200}
+                  height={!minimal ? 300 : 200}
                 />
               </div>
               <div className={styles.movieCardHeader}>

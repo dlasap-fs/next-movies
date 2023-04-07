@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  min-height: 100%;
+  height: fit-content;
   min-width: 99%;
   padding: 30px;
   gap: 10px;
@@ -73,12 +73,13 @@
 .column_movies {
   display: flex;
   flex-direction: column;
-  min-width: 70%;
+  justify-content: center;
+  width: 100%;
 }
 
 .moviesSection {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 10px;
   /* border-radius: 12px; */
@@ -87,19 +88,27 @@
   /* min-width: 75%; */
 }
 
+.popular {
+  border-left: 1px rgba(95, 216, 111, 0.2) ridge;
+  border-right: 1px ridge rgba(95, 216, 111, 0.2);
+}
+
 .moviesSection > * {
   display: flex;
   text-align: center;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
+  padding: 2rem;
   min-height: 100%;
 }
 
 .column_movies h3 {
-  background: rgb(40, 139, 58);
-  color: rgb(247, 247, 245);
-  border-radius: 12px;
+  background: rgb(133, 199, 48);
+  align-self: center;
+  color: rgb(65, 65, 14);
+  padding: 10px 25px;
+  width: fit-content;
 }
 
 @media (prefers-color-scheme: dark) {
