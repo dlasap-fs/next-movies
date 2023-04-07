@@ -5,7 +5,6 @@ export default function MovieCard({ movie, movie_videos }) {
   console.log("%c  movie:", "color: #0e93e0;background: #aaefe5;", movie);
 
   const movie_trailer = movie_videos.reduce((acc, curr) => {
-    console.log("%c  curr:", "color: #0e93e0;background: #aaefe5;", curr);
     if (curr.type == "Trailer" && curr.official && curr.site == "YouTube") return curr;
     return acc;
   }, {});
@@ -92,7 +91,7 @@ export default function MovieCard({ movie, movie_videos }) {
           <p>Produced by: </p>
           {production_companies.map((pc) => {
             return (
-              <div>
+              <div key={movie.id}>
                 <Image key={movie.id} src={"https://image.tmdb.org/t/p/original" + pc.logo_path} height={50} width={50} alt={title} />
                 <p>{pc.name}</p>
               </div>
